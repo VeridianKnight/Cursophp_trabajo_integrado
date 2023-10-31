@@ -1,0 +1,98 @@
+/***************************/
+/* Config Eliminar cuenta */
+/**************************/
+.cambiar-mail {
+    width: 100%;
+    max-width: 100%;
+    height: 95vh; /* Reducir la altura del contenedor */
+    background-color: var(--clr-bg-secundario);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999999;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms ease-in-out;
+}
+
+.subcontenedor-cambiar{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margen-m);
+    text-align: center;
+}
+.subcontenedor-cambiar h1{
+    font-size: var(--fuente-l);
+    padding-top: var(--margen-s);
+    font-weight: bold;
+}
+.formulario-cambiar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contrasena,
+.contrasena-conf,
+.nuevo-mail,
+.btn-formulario-cambiar{
+    width: 70vw;
+    display: inline-block;
+    border: 10px solid var(--clr-primario);
+    padding: var(--margen-s);
+    align-self: center;
+}
+
+.formulario-cambiar label{
+    color: var(--clr-secundario);
+    font-size: var(--fuente-xl);
+}
+
+.formulario-cambiar > input[type=password]{
+    background-color: var(--clr-bg-primario);
+    border-top-left-radius: 15px;
+}
+
+
+.btn-formulario-cambiar{
+    margin-left: -0.5rem;
+    padding-top: var(--margen-m);
+    margin-top: var(--margen-m);
+    background-color: var(--clr-bg-primario);
+    color: var(--clr-secundario);
+    width: 35vw;
+    font-size: var(--fuente-xl);
+}
+
+.btn-formulario-cambiar:hover{
+    color: #90032e;
+    border: 10px solid #90032e;
+}
+
+.btn-cerrar{
+    position: absolute;
+    top: var(--margen-s);
+    right: var(--margen-s);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    text-align: center;
+}
+.btn-cerrar > i{
+    background: var(--clr-gradient);
+    font-weight: bold;
+    font-size: var(--fuente-xxl);
+    -webkit-background-clip: text; /* Para navegadores basados en Webkit (como Chrome y Safari) */
+    background-clip: text;
+    color: transparent;
+}
+
+/*Config de java script*/
+.cambiar-mail.activo{
+    opacity: 1;
+    transform: scale(1);
+}

@@ -1,0 +1,198 @@
+/*********************************/
+/* Espacio para importar fuentes */
+/*********************************/
+@import url('../css/estilosRegistro.css');
+@import url('../css/estilosLogin.css');
+@import url('../css/estilosSearchBar.css');
+@import url('../css/estilosMenu.css');
+@import url('../css/mediaquerry.css');
+/****************************/
+/* Variables perzonalizadas */
+/****************************/
+:root{
+/*Colores personalizados*/
+    --clr-primario: #3d3d3d;
+    --clr-secundario: rgba(0,0,0,0.6);
+    --clr-bg-primario: #fff;
+    --clr-bg-secundario: #c0bcbc;
+    --clr-hover-claro: var(--clr-bg-primario);
+    --clr-hover-obsc:  #131417;
+    --clr-transparecia: #252830;
+    --clr-transparecia-alt: rgba(0,0,0,0.15);
+    --clr-gradient: linear-gradient(115deg, #90032e, #bf0033, #ff6237, #ffab0d, #eff5ab);
+/*Tamaños personalizados*/
+    --fuente-s: 1.2rem;
+    --fuente-m: 1.6rem;
+    --fuente-l: 2.4rem;
+    --fuente-xl: 3rem;
+    --fuente-xxl: 4rem;
+
+    --margen-s: 1.5rem;
+    --margen-m: 2rem;
+    --margen-l: 2.5rem;
+    --margen-xl: 3rem;
+/*Agregar mas variables a ser nesesario*/
+
+}
+/*************************/
+/* Configuracion Basicas */
+/*************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-size: var(--fuente-m);
+    color: var(--clr-secundario);
+    background-color: var(--clr-bg-primario);
+    letter-spacing: 0.1rem;
+    transition: background-color 200ms, color 200ms;
+}
+
+a{
+    text-decoration: none;
+    color: inherit
+}
+
+ul{
+    list-style: none;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+input, button{
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+}
+
+i{
+    font-size: var(--fuente-m);
+}
+
+/********************************/
+/* Configuracion cambio de modo */
+/********************************/
+body.modo-obsc{
+    --clr-primario: #fff;
+    --clr-secundario: #afb6cd;
+    --clr-bg-primario: #131417;
+    --clr-bg-secundario: #252830;
+    --clr-hover-claro: var(--clr-primario);
+    --clr-transparecia: rgba(255,255,255,.05);
+    --clr-transparecia-alt: rgba(0,0,0,.75);
+}
+
+
+/****************************/
+/* Config clases generales */
+/****************************/
+.contenedor{
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 var(--margen-s);
+}
+
+.centrar-items{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/***************/
+/* Encabezado */
+/**************/
+.header{
+    background-color: var(--clr-bg-secundario);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--margen-s);
+}
+
+.logo{
+    font-size: var(--fuente-m);
+    color: var(--clr-primario);
+}
+
+
+/* ocultar iconos */
+
+.icono-sol{
+   display: none; 
+}
+.modo-obsc .icono-luna{
+    display: none;
+}
+.modo-obsc .icono-sol{
+    display: block;
+}
+
+.btn{
+    cursor: pointer;
+}
+/* Config de javascript */
+
+.header.activo{
+    box-shadow: 0 1px 0.5rem var(--clr-transparecia);
+}
+
+
+/************************************/
+/* Config borde boton personalizado */
+/************************************/
+.borde-g{
+    border: 15px solid;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+.btn-login .borde-g,
+.btn-registro .borde-g{
+    border: 3px solid;
+    padding: 2px;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+.btn-login .borde-g:hover,
+.btn-registro .borde-g:hover{
+    border: 5px solid;
+    padding: 2px;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+.btn-cerrar-sesion .borde-g,
+.btn-perfil .borde-g{
+    border: 3px solid;
+    padding: 2px;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+.btn-cerrar-sesion .borde-g,
+.btn-perfil .borde-g{
+    border: 5px solid;
+    padding: 2px;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+
+
+

@@ -1,0 +1,359 @@
+@import url('../css/estilosEliminarCuena.css');
+@import url('../css/estilosCambiarMail.css');
+/****************************/
+/* Variables perzonalizadas */
+/****************************/
+:root{
+/*Colores personalizados*/
+    --clr-primario: #3d3d3d;
+    --clr-secundario: rgba(0,0,0,0.6);
+    --clr-bg-primario: #fff;
+    --clr-bg-secundario: #c0bcbc;
+    --clr-hover-claro: var(--clr-bg-primario);
+    --clr-hover-obsc:  #131417;
+    --clr-transparecia: #252830;
+    --clr-transparecia-alt: rgba(0,0,0,0.15);
+    --clr-gradient: linear-gradient(115deg, #90032e, #bf0033, #ff6237, #ffab0d, #eff5ab);
+/*Tamaños personalizados*/
+    --fuente-s: 1.2rem;
+    --fuente-m: 1.6rem;
+    --fuente-l: 2.4rem;
+    --fuente-xl: 3rem;
+    --fuente-xxl: 4rem;
+
+    --margen-s: 1.5rem;
+    --margen-m: 2rem;
+    --margen-l: 2.5rem;
+    --margen-xl: 3rem;
+/*Agregar mas variables a ser nesesario*/
+
+}
+/*************************/
+/* Configuracion Basicas */
+/*************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-size: var(--fuente-m);
+    color: var(--clr-secundario);
+    background-color: var(--clr-bg-primario);
+    letter-spacing: 0.1rem;
+    transition: background-color 200ms, color 200ms;
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit
+}
+
+ul{
+    list-style: none;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+input, button{
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+}
+
+i{
+    font-size: var(--fuente-m);
+}
+
+
+
+/********************************/
+/* Configuracion cambio de modo */
+/********************************/
+body.modo-obsc{
+    --clr-primario: #fff;
+    --clr-secundario: #afb6cd;
+    --clr-bg-primario: #131417;
+    --clr-bg-secundario: #252830;
+    --clr-hover-claro: var(--clr-primario);
+    --clr-transparecia: rgba(255,255,255,.05);
+    --clr-transparecia-alt: rgba(0,0,0,.75);
+}
+
+.contenedor{
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 var(--margen-s);
+}
+
+.borde-g{
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+.pfp.borde-g,
+.datos_usuario.borde-g
+{
+    border: 15px solid;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+.post_usuario.borde-g{
+    border: 15px solid;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+/****************/
+/* ESTILOS HEADER*/
+/****************/
+.header {
+    display: flex;
+    position: fixed;
+    justify-content: right;
+    padding: 10px;
+    top: 0;
+    width: 100%;
+    background-color: var(--clr-bg-secundario);
+    height: 10vh;
+    z-index: 9999;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--margen-s);
+}
+
+.go-back,
+.cerra-sesion{
+    padding: 0.5rem;
+    margin: var(--margen-s);
+}
+
+/* ocultar iconos */
+
+.icono-sol{
+    display: none; 
+ }
+ .modo-obsc .icono-luna{
+     display: none;
+ }
+ .modo-obsc .icono-sol{
+     display: block;
+ }
+
+ .btn{
+    cursor: pointer;
+}
+
+.secciones{
+    padding: var(--margen-xl);
+}
+
+/*********************/
+/*Estilos contenedor*/
+/*********************/
+.contenedor-perfil-usuario{
+    display: grid;
+    grid-template-rows: 
+    50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 10px 50px;
+    grid-template-columns: 30vw 50vw;
+    margin-top: 10vh;
+}
+
+/******************/
+/*IMAGEN DE PERFIL*/
+/******************/
+.pfp{
+    grid-row: 1 / 11;
+    grid-column: 1 / 2 ;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    text-justify: center;
+    padding:var(--margen-m) var(--margen-s);
+    background: var(--clr-bg-secundario);
+}
+
+.pfp h2{
+    font-size: var(--fuente-xl);
+    margin: auto;
+    padding-bottom: var(--margen-s);
+    text-decoration: underline 2px var(--clr-primario);
+    font-weight: bold;
+    font-style: italic;
+    transition: background 200ms, font-size 200ms ease-in-out;
+    
+}
+
+.pfp img{
+    padding-bottom: var(--margen-s);
+    height: 80%;
+    width: 70%;
+    margin-left: 4vw;
+}
+
+.pfp h2:hover{
+        background-image: var(--clr-gradient); /* Define los colores del gradiente */
+        -webkit-background-clip: text; /* Para navegadores basados en Webkit (Safari, Chrome) */
+        background-clip: text; /* Establece que el gradiente siga la forma del texto */
+        color: transparent; /* Hace que el texto sea transparente, mostrando el gradiente de fondo */
+        font-size: var(--fuente-xxl) 
+}
+
+
+/*********************/
+/*  DATOS DEL USUARIO*/
+/********************/
+.datos_usuario {
+    grid-row: 12 / 100;
+    grid-column: 1/2;
+    width: 60vw;
+    height: fit-content;
+    width: 100%;
+    padding: var(--margen-s);
+    font-size: var(--fuente-xl);
+    margin-bottom: var(--margen-m);
+    background: var(--clr-bg-secundario);
+}
+
+.emai {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    align-content: space-around;
+    justify-content: center;
+    margin-bottom: var(--margen-s);
+}
+
+.emai h1{
+    font-size: var(--fuente-l);
+}
+
+.user-email {
+    margin-left: var(--margen-s);
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--margen-s);
+}
+.btns button{
+    font-size: var(--fuente-l);
+}
+
+.cambiar-correo {
+    margin-right: var(--margen-s);
+    margin-bottom: var(--margen-s);
+}
+
+
+
+/* Estilo de las celdas de la tabla con borde de gradiente */
+.post_usuario {
+    grid-row: 1/12;
+    grid-column: 2/2 ;
+    margin-left: 6vw;
+    width: 100%;
+    height:100%;
+    background: var(--clr-bg-secundario);
+    margin-top: var(--margen-l); /* Ajusta el margen superior para separarlo de datos_usuario */
+    text-align: center; /* Alinea el contenido al centro si es necesario */
+}
+
+.post_usuario h1{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: var(--fuente-xxl);
+    font-style: italic;
+    background-image: var(--clr-gradient); /* Define los colores del gradiente */
+    -webkit-background-clip: text; /* Para navegadores basados en Webkit (Safari, Chrome) */
+    background-clip: text; /* Establece que el gradiente siga la forma del texto */
+    color: transparent; /* Hace que el texto sea transparente, mostrando el gradiente de fondo */
+    
+}
+
+.post_usuario p{
+    padding: var(--margen-m);
+    font-size: var(--fuente-l);
+    color: var(--clr-secundario);
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+/* Estilo de borde-g:hover */
+.pfp-cambio.borde-g:hover,
+.go-back.borde-g:hover,
+.cerra-sesion.borde-g:hover,
+.cambiar-correo.borde-g:hover,
+.eliminar-cuenta.borde-g:hover
+{
+    border: 7px solid;
+    padding: 0.6rem;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+.contenedor-cambio-pfp{
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--clr-bg-secundario);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    z-index: 999999;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms ease-in-out;
+}
+
+.contenedor-cambio-pfp h1{
+    font-size: var(--fuente-xxl);
+    text-align: center;
+    color: var(--clr-secundario)
+}
+#contenedor-imagen {
+    width: 80%;
+    transform: translateY(-30px);
+    margin-left: 6vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.link-img {
+    display: block; /* Hace que los enlaces ocupen todo el espacio de su celda */
+}
+
+.link-img img {
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen al tamaño de la celda */
+}
+
+.contenedor-cambio-pfp.activo{
+    opacity: 1;
+    transform: scale(1);
+}

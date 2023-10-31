@@ -1,0 +1,82 @@
+/********************************/
+/* Estilos pagina de login  */
+/********************************/
+.contenedor-formulario-login {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh; /* Reducir la altura del contenedor */
+    background-color: var(--clr-bg-secundario);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 999999;
+    transition: opacity 300ms ease-in-out;
+    box-shadow: 7px 13px 37px --clr-transparecia;
+}
+
+.subcontenedor-formulario-login{
+    width: 25rem;
+    height: fit-content;
+    padding: var(--margen-m);
+    background-color: var(--clr-bg-primario);
+    position: relative;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+
+.subcontenedor-formulario-login h4{
+    font-size: var(--fuente-m);
+    margin-bottom: var(--margen-s);
+}
+
+.formulario-login input{
+    width: 100%;
+    background-color: var(--clr-bg-secundario);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    
+}
+
+.subcontenedor-formulario-login {
+    text-align: center; 
+}
+
+
+.btn-formulario-login,
+label {
+    display: block; 
+    margin: 0 auto; 
+}
+
+.formulario-login .borde-g{
+    border: 5px solid;
+    border-image-slice: 1;
+    border-image-source: var(--clr-gradient);
+}
+
+
+.btn-lg-cerrar{
+    position: absolute;
+    top: 0;
+    right: var(--margen-s);
+    width: var(--fuente-xl);
+    height: var(--fuente-xl);
+    display: flex;
+}
+.btn-lg-cerrar i{
+    background: var(--clr-gradient);
+    font-weight: bold;
+    -webkit-background-clip: text; /* Para navegadores basados en Webkit (como Chrome y Safari) */
+    background-clip: text;
+    color: transparent; 
+}
+
+/*Config de java script*/
+.contenedor-formulario-login.activo{
+    opacity: 1;
+    transform: scale(1);
+}
