@@ -7,11 +7,11 @@
 /*Colores personalizados*/
     --clr-primario: #3d3d3d;
     --clr-secundario: rgba(0,0,0,0.6);
-    --clr-bg-primario: #fff;
-    --clr-bg-secundario: #c0bcbc;
+    --clr-bg-primario: #e9f1f4;
+    --clr-bg-secundario: #b0c8cf;
     --clr-hover-claro: var(--clr-bg-primario);
     --clr-hover-obsc:  #131417;
-    --clr-transparecia: #252830;
+    --clr-transparecia: rgba(172,223,232,0.75);
     --clr-transparecia-alt: rgba(0,0,0,0.15);
     --clr-gradient: linear-gradient(115deg, #90032e, #bf0033, #ff6237, #ffab0d, #eff5ab);
 /*Tamaños personalizados*/
@@ -102,12 +102,12 @@ body.modo-obsc{
 .pfp.borde-g,
 .datos_usuario.borde-g
 {
-    border: 15px solid;
+    border: 7px solid;
     border-image-slice: 1;
     border-image-source: var(--clr-gradient);
 }
 .post_usuario.borde-g{
-    border: 15px solid;
+    border: 7px solid;
     border-image-slice: 1;
     border-image-source: var(--clr-gradient);
 }
@@ -184,7 +184,7 @@ body.modo-obsc{
     justify-content: center;
     text-justify: center;
     padding:var(--margen-m) var(--margen-s);
-    background: var(--clr-bg-secundario);
+    background: var(--clr-transparecia);
 }
 
 .pfp h2{
@@ -226,7 +226,7 @@ body.modo-obsc{
     padding: var(--margen-s);
     font-size: var(--fuente-xl);
     margin-bottom: var(--margen-m);
-    background: var(--clr-bg-secundario);
+    background: var(--clr-transparecia);
 }
 
 .emai {
@@ -240,6 +240,8 @@ body.modo-obsc{
 }
 
 .emai h1{
+    display: flex;
+    flex-direction: row;
     font-size: var(--fuente-l);
 }
 
@@ -271,7 +273,7 @@ body.modo-obsc{
     margin-left: 6vw;
     width: 100%;
     height:100%;
-    background: var(--clr-bg-secundario);
+    background: var(--clr-transparecia);
     margin-top: var(--margen-l); /* Ajusta el margen superior para separarlo de datos_usuario */
     text-align: center; /* Alinea el contenido al centro si es necesario */
 }
@@ -316,7 +318,7 @@ body.modo-obsc{
     width: 100%;
     max-width: 100%;
     height: 100vh;
-    background-color: var(--clr-bg-secundario);
+    background-color: var(--clr-bg-primario);
     position: fixed;
     top: 0;
     left: 0;

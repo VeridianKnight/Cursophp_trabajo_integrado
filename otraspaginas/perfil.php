@@ -180,7 +180,6 @@ $db->close();
 
             <div class="datos_usuario borde-g">
                 <div class="emai">
-                    <h1 class="email-txt"> Email: </h1>
                     <h1 class="user-email">
                         <?php echo $row['email']; ?>
                     </h1>

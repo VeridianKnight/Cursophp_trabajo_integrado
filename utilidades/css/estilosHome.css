@@ -14,10 +14,10 @@
     --clr-primario: #3d3d3d;
     --clr-secundario: rgba(0,0,0,0.6);
     --clr-bg-primario: #fff;
-    --clr-bg-secundario: #c0bcbc;
+    --clr-bg-secundario: #b0c8cf;
     --clr-hover-claro: var(--clr-bg-primario);
     --clr-hover-obsc:  #131417;
-    --clr-transparecia: #252830;
+    --clr-transparecia: #acdfe8;
     --clr-transparecia-alt: rgba(0,0,0,0.15);
     --clr-gradient: linear-gradient(115deg, #90032e, #bf0033, #ff6237, #ffab0d, #eff5ab);
 /*Tamaños personalizados*/
@@ -82,7 +82,7 @@ i{
 /********************************/
 body.modo-obsc{
     --clr-primario: #fff;
-    --clr-secundario: #afb6cd;
+    --clr-secundario: #e9f1f4;
     --clr-bg-primario: #131417;
     --clr-bg-secundario: #252830;
     --clr-hover-claro: var(--clr-primario);
